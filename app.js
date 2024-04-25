@@ -1,10 +1,10 @@
 const express = require('express');
 
-const mainRoute = require('./routes/main');
-const gamesRouter = require('./routes/games'); 
-
 const PORT = 3000;
 const app = express();
+
+const mainRoute = require('./routes/main');
+const gamesRouter = require('./routes/games'); 
 
 app.use(mainRoute, gamesRouter); 
 

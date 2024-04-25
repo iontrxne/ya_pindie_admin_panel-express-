@@ -1,6 +1,7 @@
 const gamesRouter = require('express').Router();
 const { readData, writeData } = require('../utils/data');
 
+//берём все игры
 const getAllGames = async (req, res) => {
   const games = await readData('./data/games.json');
   
@@ -18,6 +19,7 @@ const getAllGames = async (req, res) => {
   res.send(req.games);
 }
 
+//Удаляем игру по id
 const deleteGame = async (req, res) => {
   const games = await readData('./data/games.json');
   
@@ -43,6 +45,7 @@ const deleteGame = async (req, res) => {
     updated: req.game
   });
 };
+
 
 gamesRouter.get("/games", getAllGames)
 gamesRouter.delete("/games/:id", deleteGame);
